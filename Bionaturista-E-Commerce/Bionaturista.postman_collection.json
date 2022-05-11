@@ -1,0 +1,431 @@
+{
+	"info": {
+		"_postman_id": "8371817c-6c39-4258-b17a-98500a6fe6cc",
+		"name": "Bionaturista",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "InicioSesion",
+			"item": [
+				{
+					"name": "ControlUsuarios",
+					"item": [
+						{
+							"name": "Registrar Usuario como Admin",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MjE3MTE3NSwiZXhwIjoxNjUyMjA3MTc1fQ.Srb5gp2Mc1Dzr8uKX3DqMsvcIT_qLojOk5emQYtVSRwEV7kVRTtQlSGaU2QgDGV2uTvlOcwMiB_wEO7h5zswQA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombreUsuario\":\"123\",\r\n    \"contrasegnaUsuario\":\"123\",\r\n    \"nombreCompleto\":\"petra petra petra\",\r\n    \"direccion\":\"petra calle petra\",   \r\n    \"telefono\":\"999888999\",    \r\n    \"correo\": \"petra@upao.edu\",\r\n    \"dni\":\"111111111\",\r\n    \"roles\":[\r\n        \"user\", \"admin\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/usuarios",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"usuarios"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Usuarios",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjM0IiwiaWF0IjoxNjUyMTcxNDMyLCJleHAiOjE2NTIyMDc0MzJ9.ehEB35rgHrxVE7KMwjCyxpUlS3O7bxZz9REmVsDUl50qOrJWTVgULJRpPUJQ2xOwPHHJs2f2PeA4OBJybEgsLw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/usuarios",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"usuarios"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar Usuario",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MjE2ODcxNiwiZXhwIjoxNjUyMjA0NzE2fQ.5g7YrYhQvKiNvt_JXlu_ImKO-FQbwQrBh0v91xX1Kz0lBBmmoN8UZEq4FxQ7s1v_OXWl6zlRdkHCjfpMJv5hwg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/usuarios/2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"usuarios",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Registro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombreUsuario\":\"646456\",\n    \"contrasegnaUsuario\":\"111111\",\n    \"nombreCompleto\":\"11213123\",\n    \"direccion\":\"123123 \",   \n    \"telefono\":\"1123123\",    \n    \"correo\": \"aa1s54d@upao.edu\",\n    \"dni\":\"asdasdasd5\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/new",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "IniciarSesion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombreUsuario\":\"admin\",\n    \"contrasegnaUsuario\":\"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Otros",
+			"item": [
+				{
+					"name": "Crear Producto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombreP\":\"stevia\",\r\n    \"imagenP\":\"stevia.jpg\",\r\n    \"descripcionP\":\"soy azucar pero no soy azucar\",\r\n    \"precioP\":12,\r\n    \"stockP\":20,\r\n    \"categoria\": {\r\n        \"idCategoria\":1\r\n    },\r\n    \"compuesto\":{\r\n        \"idCompuesto\":1\r\n    }\r\n\r\n    \r\n    \r\n\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/productos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Compuesto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombreCompuesto\": \"Vitamina A\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/compuestos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"compuestos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar Compuesto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idCompuesto\": 1,\r\n    \"nombreCompuesto\": \"Vitamina B\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/compuestos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"compuestos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Compuesto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/compuestos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"compuestos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Compuestos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/compuestos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"compuestos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Compuesto por ID Compuesto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/compuestos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"compuestos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Categoria",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombreCategoria\": \"Aceites\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/categorias",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar Categorias",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idCategoria\": 1,\r\n    \"nombreCategoria\": \"Capsulas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/categorias",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Categoria",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/categorias/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categorias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Categorias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/categorias",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Categoria por ID Categoria",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/categorias/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categorias",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8090/bionaturista"
+		}
+	]
+}
