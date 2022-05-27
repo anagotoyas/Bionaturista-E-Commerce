@@ -1,5 +1,34 @@
+<section class="cajita">
+  <div class="col-sm-3">
+    <mat-card class="example-card" *ngFor="let element of dataSource">
+        <mat-card-header>
+        </mat-card-header>
+        
+        <mat-card-content style="text-align: center; margin-top: 25px;">
+          <img src="https://plazavea.vteximg.com.br/arquivos/ids/1242174-450-450/112970.jpg?v=637516204457430000" class="prod">
+          <p class="nombreProd">
+            {{element.nombreP}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions style="text-align: center;">
+          <p class="precioProd">
+            S./ {{element.precioP}}
+          </p>
+          <!-- <button mat-button routerLink="/user/compras/crear-compra/{{element.idPaquete}}" class="boton_paquete">s/. {{element.precioPaquete}}.00</button> -->
+        </mat-card-actions>
+    </mat-card>
+  </div>
+  </section>
 
-<div class="container">
+
+
+
+
+
+
+
+
+<!-- <div class="container">
     <h3 class="fw-bold">Lista de productos</h3>
     
     
@@ -58,4 +87,4 @@
     </div>
     
     </div>
-    
+     -->

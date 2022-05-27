@@ -1,3 +1,35 @@
 .container{
     margin-top:25px;
 }
+
+.example-card {
+    width: 12rem;
+    height: 20rem;
+    border-radius:10px;
+     
+    }
+
+.prod{
+    width:150px;
+}
+
+.mat-card {
+    display: inline-block;
+    margin: 2rem;
+    
+    }
+
+.nombreProd {
+    color: #4A72B2;
+    font-size: 15px;
+
+}
+    
+
+.precioProd {
+    color: #64813F;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
