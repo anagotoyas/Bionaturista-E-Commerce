@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Nuevo Compuesto</h1>
+<div mat-dialog-content>
+    <form [formGroup]="compuestoForm" autocomplete="off">
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre del Compuesto</mat-label>
+            <input formControlName="nombreCompuesto" matInput #nameInput placeholder="Ingrese el compuesto" type="text" maxlength="100" />
+        </mat-form-field>
+        <div class="error-msg" *ngIf="compuestoForm.controls['nombreCompuesto'].errors?.['minlength']">Debe tener más de 3 caracteres</div>
+        <div class="error-msg" *ngIf="compuestoForm.controls['nombreCompuesto'].errors?.['maxlength']">El nombre del compuesto debe ser menos de 100 caracteres</div>
+    </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Cancelar</button>
+    <button mat-raised-button color="primary" type="submit" (click)="crearCompuesto()" [disabled]="compuestoForm.invalid">Aceptar</button>
+</div>

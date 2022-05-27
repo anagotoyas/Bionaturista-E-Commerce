@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.login-box{
+    width: 500px;
+    height: 75%;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    padding: 50px 30px;
+    background-color: #F6F6F6;
+    display: grid;
+    text-align: center;
+}
+
+.login-box .logo{
+    margin: auto;
+    height: 60%;
+}
+
+.login-box input[type="email"],
+.login-box input[type="password"]{
+    font-family: 'Montserrat', sans-serif;
+    width: 468px;
+    height: 50px;
+    border: none;
+    outline: none;
+    background-color: #EFEFEF;
+    border-radius: 30px;
+    font-size: 16px;
+    margin-bottom: 25px;
+    padding-left: 22px;
+    box-sizing: border-box;
+}
+
+.login-box input::placeholder{
+    color: grey;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.danger{
+    color:red;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.login-box input[type="submit"]{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+
+    width: 260px;
+    height: 50px;
+    border: none;
+    outline: none;
+    background-color: #495867;
+    border-radius: 20px;
+    margin-top:30px;
+    color:white;
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+.login-box input[type="submit"]:hover{
+    background-color: #4A72B2;
+}
+
+.row{
+    display: flex;
+    margin-top: 5px;
+    text-align: start;
+    padding: 0px 40px;
+}
+
+.col-1{
+    flex: 10%;
+    margin-top: 5px;
+}
+
+.col-2{
+    flex: 80%;
+    text-align: left;
+}
+
+.restablecer{
+    color: black;
+    font-weight: 700;
+}
+
+.cuenta{
+    display: inline;
+    font-weight: 500;
+}
+
+.registro{
+    display: inline;
+}
+
+.registrate{
+    margin-left: 10px;
+    color: black;
+    font-weight: 700;
+}
+
+p{
+    margin: 5px 0px;
+}
+
+a:hover{
+    color: #4A72B2;
+}
+
+@media only screen and (max-width: 700px){
+    body{
+        font-size: 16px;
+    }
+
+    .login-box .logo{
+        height: 50%;
+    }
+    
+    .login-box{
+        width: 350px;
+        height: 70%;
+        padding: 50px 30px;
+    }
+
+    .login-box input[type="email"],
+    .login-box input[type="password"]{
+        width: 340px;
+        height: 40px;
+    }
+    .login-box input[type="submit"]{
+        width: 50%;
+        height: 40px;
+        font-weight: 600;
+        font-size: 20px;
+    }
+
+    .col-2{
+        flex: 70%;
+    }
+
+}
+

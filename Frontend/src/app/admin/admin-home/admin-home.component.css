@@ -1,0 +1,59 @@
+
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  mat-drawer {
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 30px;
+    background: #495867;
+  }
+  
+  mat-drawer-container {
+      height: 100%;
+      background-color: white;
+  }
+  
+  .page {
+    color: white;
+    padding: 0 2rem;
+    background: white;
+  }
+  
+  .page__box {
+    padding: 30px;
+    color: black;
+    display: flex;
+    font-family: Montserrat;
+  }
+  
+  .fill-space {
+    flex: 1 1 auto;
+  }
+  
+  .page__content {
+  
+    background: white;
+    color: black;
+    padding: 30px;
+    font-family: Montserrat;
+  }
+
+  .container2{
+  
+    margin-top:30px;
+  
+    background-color: #F3F3F3;
+    border-radius: 25px;
+  
+  }
+  
+  
+  
+  

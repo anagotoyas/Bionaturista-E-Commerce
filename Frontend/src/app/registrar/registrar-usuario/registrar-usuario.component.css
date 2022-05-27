@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+.fila{
+    display: flex;
+    text-align: start;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+
+.info-box{
+    display: grid;
+
+}
+
+.colu-1{
+    margin-top: 100px;
+    padding: 60px 40px;
+    margin: auto;
+    flex: 50%;
+}
+
+.colu-2{
+    margin-top: 20px;
+
+    flex: 50%;
+    text-align: left;
+}
+
+.logo{
+    width: 50%;
+    top: 80px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.beneficios{
+    width: 64%;
+    margin: auto;
+}
+
+@media only screen and (max-width: 700px){
+    .colu-1{
+        display: none;
+    }
+
+    .colu-2{
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+    
+    }
+}

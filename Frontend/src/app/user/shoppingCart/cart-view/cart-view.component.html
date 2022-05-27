@@ -1,0 +1,98 @@
+<head>
+    <meta charset="utf-8">
+    <title>Producto</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet">
+
+  </head>
+  <body>
+      <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" >
+                <mat-icon class="nav-breadcrumb triangle">play_arrow</mat-icon><li class="breadcrumb-item title-carrito" >Carrito de Compras</li>
+
+            </ol>
+        </nav>
+
+        <div>
+            <table
+              mat-table
+              [dataSource]="dataSource"
+              matSort
+              class="mat-elevation-z8"
+              class="w-100"
+            >
+            <ng-container matColumnDef="Imagen" class="col-img">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Imagen</th>
+              <td mat-cell *matCellDef="let element" class="col-img"><img class="imagen" [src]="element.imagenP" /> </td>
+            </ng-container>
+              <ng-container matColumnDef="Producto">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Producto</th>
+                <td mat-cell *matCellDef="let element">{{ element.nombreP }}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="Eliminar">
+                <th mat-header-cell *matHeaderCellDef>Eliminar</th>
+                <td mat-cell *matCellDef="let element">
+                  <button
+                    mat-button
+                    color="primary"
+                    (click)="eliminarDelCarrito(element.idProducto)"
+                  >
+                  <mat-icon>delete</mat-icon>
+                  </button>
+
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="Precio" class="precio">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Precio</th>
+                <td mat-cell *matCellDef="let element" >{{ (element.precioP).toFixed(2) }}</td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            </table>
+
+            <div class=" total">
+                <div class="row">
+                    <div class="col-md-6">
+
+                    </div>
+                    <div class="col-md-4">
+                        <p >Total de productos: </p>
+                        <p>Total del delivery: </p>
+                        <p><b>Total a pagar: </b></p>
+                    </div>
+                    <div class="col-md-2">
+                        <p> {{this.precioPro}}</p>
+                        <p>{{this.delivery}}</p>
+                        <p><b> {{this.precioTotal}}</b></p>
+
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+
+                    </div>
+                    <div class="col-md-6 boton">
+                        <button type="button" class="btn btn-primary pagar" routerLink="/user/pago">Pagar</button>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+            <a  class="back" href="../user/"> <i class="far fa-arrow-alt-circle-left "></i><span class="continua">Continua <b >Comprando</b></span> </a>
+          </div>
+
+
+
+
+
+      </div>
+
+  </body>

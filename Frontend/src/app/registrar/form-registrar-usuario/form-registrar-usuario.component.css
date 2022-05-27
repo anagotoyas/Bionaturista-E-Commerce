@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.register-box{
+    width: 500px;
+    height: auto;
+    padding: 50px 30px;
+    background-color: #F6F6F6;
+    display: grid;
+    text-align: center;
+    
+}
+
+.register-box input[type="text"],
+.register-box input[type="email"]{
+    font-family: 'Montserrat', sans-serif;
+    margin: auto;
+    width: 468px;
+    height: 50px;
+    border: none;
+    outline: none;
+    background-color: #EFEFEF;
+    border-radius: 30px;
+    font-size: 16px;
+    margin-bottom: 25px;
+    padding-left: 22px;
+    box-sizing: border-box;
+}
+
+.register-box input::placeholder{
+    color: grey;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.danger{
+    color:red;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.register-box input[type="submit"]{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    margin: auto;
+
+    width: 260px;
+    height: 50px;
+    border: none;
+    outline: none;
+    background-color: #495867;
+    border-radius: 20px;
+    margin-top:30px;
+    color:white;
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+.register-box input[type="submit"]:hover{
+    background-color: #4A72B2;
+}
+
+.fila{
+    display: flex;
+    margin-top: 5px;
+    text-align: start;
+    padding: 0px 40px;
+}
+
+.colu-1{
+    flex: 10%;
+    margin-top: 5px;
+}
+
+.colu-2{
+    flex: 80%;
+    text-align: left;
+}
+
+.cuenta{
+    display: inline;
+    font-weight: 500;
+}
+
+.registro{
+    display: inline;
+}
+
+.login{
+    margin-left: 10px;
+    color: black;
+    font-weight: 700;
+}
+
+p{
+    margin: 5px 0px;
+}
+
+a:hover{
+    color: #4A72B2;
+}
+
+.informacion{
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 700px){
+    body{
+        font-size: 16px;
+    }
+
+    .register-box .logo{
+        height: 50%;
+    }
+    
+    .register-box{
+        width: 350px;
+        height: 70%;
+        padding: 50px 30px;
+    }
+
+    .register-box input[type="text"],
+    .register-box input[type="email"]{
+        width: 340px;
+        height: 40px;
+    }
+    .register-box input[type="submit"]{
+        width: 50%;
+        height: 40px;
+        font-weight: 600;
+        font-size: 20px;
+    }
+
+    .colu-2{
+        flex: 70%;
+    }
+
+}
+

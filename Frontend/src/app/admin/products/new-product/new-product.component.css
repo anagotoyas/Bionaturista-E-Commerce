@@ -1,0 +1,38 @@
+.titulo{
+    font-weight: 500;
+    font-size: 25px;
+    margin-bottom: 30px;
+    float: left;
+}
+
+.page {
+    color: white;
+    padding: 0 2rem;
+    background: white;
+  }
+
+.page__box {
+    padding: 0 4rem;
+    color: black;
+    display: flex;
+    font-family: Montserrat;
+}
+
+.aviso{
+    margin-left: auto;
+    float: right;
+}
+
+.page__content {
+  
+    background: white;
+    color: black;
+    padding: 30px;
+    font-family: Montserrat;
+  }
+
+@media only screen and (max-width: 400px){
+    .page {
+        padding: 0 0rem;
+      }
+    }

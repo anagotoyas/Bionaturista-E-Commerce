@@ -1,0 +1,276 @@
+<div class="container" type="cont">
+  <mat-card class="example-card">
+    <mat-tab-group mat-align-tabs="center" [(selectedIndex)]="indexTab">
+      <mat-tab >
+        <ng-template mat-tab-label >
+          <mat-icon class="example-tab-icon">local_shipping</mat-icon>
+          Informaci&oacute;n de entrega
+        </ng-template>
+        <div class="container inf-envio">
+          <div class="row">
+            <div class="col-md-12">
+              <h4>Informaci&oacute;n de <b>Contacto</b></h4>
+            </div>
+            <div class="col-md-6" >
+              <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>Nombre de Contacto</mat-label>
+                <input matInput type="text" [formControl]="controlNombreContacto" >
+
+                <mat-error *ngIf="controlNombreContacto.hasError('maxlength')">
+                  EL nombre es demasiado grande
+                </mat-error>
+                <mat-error *ngIf="controlNombreContacto.hasError('minlength')">
+                  El nombre es muy peque&ntilde;o
+                </mat-error>
+                <mat-error *ngIf="controlNombreContacto.hasError('required')">
+                  Usted debe agregar un nombre
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6" >
+              <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>N&uacute;mero de Tel&eacute;fono</mat-label>
+                <input matInput type="text" [formControl]="controlNumTelefono">
+                <mat-error *ngIf="controlNumTelefono.hasError('pattern')">
+                  El tel&eacute;fono solo debe tener n&uacute;meros
+                </mat-error>
+                <mat-error *ngIf="controlNumTelefono.hasError('required')">
+                  Usted debe agregar un tel&eacute;fono
+                </mat-error>
+                <mat-error *ngIf="controlNumTelefono.hasError('maxlength')">
+                  Número de tel&eacute;fono demasiado largo
+                </mat-error>
+                <mat-error *ngIf="controlNumTelefono.hasError('minlength')">
+                  Número de tel&eacute;fono muy corto
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <h4>Informaci&oacute;n de <b>Env&iacute;o</b></h4>
+            </div>
+            <div class="col-md-12">
+              <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>Direcci&oacute;n, apartado postal, etc.</mat-label>
+                <input matInput type="text" [formControl]="controlDireccion" >
+                <mat-error *ngIf="controlDireccion.hasError('maxlength')">
+                  Direcci&oacute;n demasiado grande
+                </mat-error>
+                <mat-error *ngIf="controlDireccion.hasError('minlength')">
+                  Direcci&oacute;n muy peque&ntilde;a
+                </mat-error>
+                <mat-error *ngIf="controlDireccion.hasError('required')">
+                  Usted debe agregar una Direcci&oacute;n
+                </mat-error>
+              </mat-form-field>              </div>
+            <div class="col-md-6" >
+              <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>Apartamento, suite, unidad, etc</mat-label>
+                <input matInput type="text" [formControl]="controlApartamento" >
+
+                <mat-error *ngIf="controlApartamento.hasError('maxlength')">
+                  Dato demasiado grande
+                </mat-error>
+                <mat-error *ngIf="controlApartamento.hasError('minlength')">
+                  Dato muy peque&ntilde;o
+                </mat-error>
+                <mat-error *ngIf="controlApartamento.hasError('required')">
+                  No ha agregado el dato indicado
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6" >
+              <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>C&oacute;digo postal</mat-label>
+                <input matInput type="text" [formControl]="controlCodigoPostal">
+                <mat-error *ngIf="controlCodigoPostal.hasError('pattern')">
+                  El C&oacute;digo postal solo debe tener números
+                </mat-error>
+                <mat-error *ngIf="controlCodigoPostal.hasError('required')">
+                  Usted debe agregar un C&oacute;digo postal
+                </mat-error>
+                <mat-error *ngIf="controlCodigoPostal.hasError('maxlength')">
+                  C&oacute;digo postal demasiado largo
+                </mat-error>
+                <mat-error *ngIf="controlCodigoPostal.hasError('minlength')">
+                  C&oacute;digo postal muy corto
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <h4>Fecha de <b>Entrega</b></h4>
+            </div>
+            <div class="col-md-6" >
+              <mat-form-field appearance="fill">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker" [formControl]="date">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6" >
+              <mat-form-field appearance="fill">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [ngxTimepicker]="timePicker" [formControl]="hora">
+                <mat-hint>HH/MM</mat-hint>
+                <ngx-material-timepicker-toggle matSuffix [for]="timePicker"></ngx-material-timepicker-toggle>
+                <ngx-material-timepicker #timePicker></ngx-material-timepicker>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row btn-siguiente">
+            <button mat-raised-button (click)="siguiente()" [disabled]="esValidoPagar()">Siguiente paso<mat-icon>keyboard_arrow_right</mat-icon> </button>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab [disabled]="esValidoPagar()">
+        <ng-template mat-tab-label type="metodo">
+          <mat-icon class="example-tab-icon">credit_card</mat-icon>
+          M&eacute;todo de pago
+        </ng-template>
+        <div class="container inf-envio">
+
+          <div class="row">
+            <div class="col-md-12">
+              <h4>Informaci&oacute;n de la <b>Tarjeta</b></h4>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label><mat-icon>payment</mat-icon>Número de tarjeta</mat-label>
+                <input matInput type="text" [formControl]="controlNumeroTarjeta" >
+                <mat-error *ngIf="controlNumeroTarjeta.hasError('pattern')">
+                  El Número de tarjeta solo debe tener números
+                </mat-error>
+                <mat-error *ngIf="controlNumeroTarjeta.hasError('maxlength')">
+                  Número de tarjeta demasiado grande
+                </mat-error>
+                <mat-error *ngIf="controlNumeroTarjeta.hasError('minlength')">
+                  Número de tarjeta muy peque&ntilde;a
+                </mat-error>
+                <mat-error *ngIf="controlNumeroTarjeta.hasError('required')">
+                  Usted necesita agregar el número de la tarjeta
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6" >
+              <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label><mat-icon>person</mat-icon>Nombre del propietario</mat-label>
+                <input matInput type="text" [formControl]="controlNombrePropietario" >
+                <mat-error *ngIf="controlNombrePropietario.hasError('maxlength')">
+                  Número de tarjeta demasiado grande
+                </mat-error>
+                <mat-error *ngIf="controlNombrePropietario.hasError('minlength')">
+                  Número de tarjeta muy peque&ntilde;a
+                </mat-error>
+                <mat-error *ngIf="controlNombrePropietario.hasError('required')">
+                  Usted necesita agregar el Nombre del propietario
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6" >
+              <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label><mat-icon>person</mat-icon>Apellido del propietario</mat-label>
+                <input matInput type="text" [formControl]="controlApellidoPropietario" >
+                <mat-error *ngIf="controlApellidoPropietario.hasError('maxlength')">
+                  Apellido demasiado grande
+                </mat-error>
+                <mat-error *ngIf="controlApellidoPropietario.hasError('minlength')">
+                  Apellido muy peque&ntilde;a
+                </mat-error>
+                <mat-error *ngIf="controlApellidoPropietario.hasError('required')">
+                  Usted necesita agregar el Apellido del propietario
+                </mat-error>
+              </mat-form-field>
+            </div>          </div>
+          <div class="row">
+
+            <div class="col-md-12">
+              <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label><mat-icon>alternate_email</mat-icon>Correo eletrónico</mat-label>
+                <input matInput type="text" [formControl]="correo" >
+                <mat-error *ngIf="correo.hasError('email')">
+                  Debe ingresar un correo válido
+                </mat-error>
+                <mat-error *ngIf="correo.hasError('required')">
+                  Usted debe ingresar un correo
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-4" >
+              <mat-form-field appearance="fill">
+                <mat-label><mat-icon>date_range</mat-icon>Mes de caducidad</mat-label>
+                <mat-select [(ngModel)]="mesSeleccionado" name="food">
+                  <mat-option *ngFor="let mes of meses" [value]="mes.value">
+                    {{mes.vista}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+
+            </div>
+            <div class="col-md-4" >
+              <mat-form-field appearance="fill">
+                <mat-label><mat-icon>date_range</mat-icon>Año de caducidad</mat-label>
+                <mat-select [(ngModel)]="agnoSeleccionado" name="food">
+                  <mat-option *ngFor="let agno of agnos" [value]="agno.value">
+                    {{agno.value}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+
+            </div>
+            <div class="col-md-4">
+              <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label><mat-icon>payment</mat-icon>Código CVV</mat-label>
+                <input matInput type="text" [formControl]="controlCVV">
+                <mat-error *ngIf="controlCVV.hasError('pattern')">
+                  El Código CVV solo debe tener números
+                </mat-error>
+                <mat-error *ngIf="controlCVV.hasError('required')">
+                  Usted debe agregar un Código CVV
+                </mat-error>
+                <mat-error *ngIf="controlCVV.hasError('maxlength')">
+                  Código CVV demasiado largo
+                </mat-error>
+                <mat-error *ngIf="controlCVV.hasError('minlength')">
+                  Código CVV muy corto
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row" style="margin-bottom: 15px;">
+            <div class="col-md-4">
+              <button mat-raised-button (click)="anterior()" [disabled]="false"><mat-icon>keyboard_arrow_left</mat-icon> Paso previo</button>
+            </div>
+            <div class="col-md-8">
+              <button class="btn-pagar" mat-raised-button color="primary" (click)="realizarPago()" [disabled]="esValidoGuardar()">
+                <div class="cont-img-txt">
+                  <img src="assets/pagar.png" [ngClass]="{'img-white': !esValidoGuardar()}" alt="pagar">
+                  Realizar pago
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </mat-tab>
+
+    </mat-tab-group>
+    <div class="row" style="margin-left: 12px; margin-right: 12px">
+      <mat-progress-bar mode="determinate" [value]="progreso"></mat-progress-bar>
+    </div>
+
+  </mat-card>
+</div>

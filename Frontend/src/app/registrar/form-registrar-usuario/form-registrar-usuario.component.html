@@ -1,0 +1,36 @@
+<form
+(ngSubmit)="registrar()"
+autocomplete="off"
+[formGroup]="form">
+<body>
+    <section class="register-box">
+        <h3 class="cuenta">Crea tu <strong>Cuenta</strong></h3>
+        <p class="informacion">Registrate para poder acceder a todos los beneficios que te ofrece <strong>Bionaturista Productos Naturales.</strong></p>
+        <input type="email" formControlName="correoUsuario" placeholder="Correo Electrónico">
+        <div *ngIf="form.controls['correoUsuario'].errors?.['email']" style="margin: -5px 0px 20px 0px">Debe ingresar un correo.</div>
+
+        <input type="text" formControlName="nombreUsuario" placeholder="Nombre de Usuario">
+        <div *ngIf="form.controls['nombreUsuario'].errors?.['minlength']" style="margin: -5px 0px 20px 0px">El nombre de usuario debe de ser al menos de 3 caracteres.</div>
+        <div *ngIf="form.controls['nombreUsuario'].errors?.['maxlength']" style="margin: -5px 0px 20px 0px">El nombre de usuario debe de ser menor de 100 caracteres.</div>
+
+        <input type="text" formControlName="contrasenaUsuario" placeholder="Contraseña">
+        <div *ngIf="form.controls['contrasenaUsuario'].errors?.['minlength']" style="margin: -5px 0px 20px 0px">La contraseña debe de ser al menos de 6 caracteres.</div>
+        <div *ngIf="form.controls['contrasenaUsuario'].errors?.['maxlength']" style="margin: -5px 0px 20px 0px">La contraseña debe de ser menor de 25 caracteres.</div>
+
+        <p class="danger">{{msg}}</p>
+        <div class="fila">
+            <div class="colu-1">
+                <i class="fas fa-exclamation fa-3x"></i>
+            </div>
+            <div class="colu-2">
+            <p style="text-align: justify;">Al crear una cuenta estás aceptando los <strong>Términos y Condiciones</strong> y la <strong>Política de Privacidad</strong>.</p>
+            </div>
+        </div>
+        <input type="submit" value="Crear Cuenta">
+        <div class="inicio">
+            <p class="cuenta">¿Ya tienes una cuenta?</p>
+            <a class="login" routerLink=''>Inicia Sesión</a>
+        </div>
+    </section>
+</body>
+</form>

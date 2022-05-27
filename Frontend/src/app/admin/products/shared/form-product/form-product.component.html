@@ -1,0 +1,114 @@
+<form
+(ngSubmit)="save()"
+autocomplete="off"
+[formGroup]="form"
+#frmLibro="ngForm"
+>
+    <h3>Nombre </h3><h3 style="color: #CE796B;">*</h3>
+    <mat-form-field appearance="outline" class="d-block">
+        <input
+        matInput #nombreInput
+        type="text"
+        maxlenght="70"
+        placeholder="Galletas de Avena"
+        formControlName="nombreP"
+        [(ngModel)]="product.nombreP"
+        />
+        <mat-hint align="end">{{nombreInput.value?.length || 0}}/70</mat-hint>
+        <mat-error *ngIf="form.controls['nombreP'].errors?.['required']">
+            Este campo es obligatorio
+        </mat-error>
+    </mat-form-field>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Precio </h3><h3 style="color: #CE796B;">*</h3>
+            <mat-form-field appearance="outline" class="d-block">
+                <input
+                matInput #precioInput
+                type="number"
+                step=".01"
+                placeholder="5.2"
+                formControlName="precioP"
+                [(ngModel)]="product.precioP"
+                />
+                <mat-error *ngIf="form.controls['precioP'].errors?.['required']">
+                    Este campo es obligatorio
+                </mat-error>
+            </mat-form-field>
+        
+            <h3>Stock </h3><h3 style="color: #CE796B;">*</h3>
+            <mat-form-field appearance="outline" class="d-block">
+                <input
+                matInput #stockInput
+                type="number"
+                placeholder="10000"
+                formControlName="stockP"
+                [(ngModel)]="product.stockP"
+                />
+                <mat-error *ngIf="form.controls['stockP'].errors?.['required']">
+                    Este campo es obligatorio
+                </mat-error>
+            </mat-form-field>
+
+            <h3>Categoría </h3><h3 style="color: #CE796B;">*</h3>
+            <br>
+            <mat-form-field appearance="outline" class="d-block">
+                <mat-select formControlName="categoria" name="categoria">
+                <mat-option *ngFor="let categoria of categorias" [value]="categoria">
+                    {{categoria.nombreCategoria}}
+                </mat-option>
+                </mat-select>
+                <mat-error *ngIf="form.controls['categoria'].errors?.['required']">
+                    Este campo es obligatorio
+                </mat-error>   
+            </mat-form-field>
+        
+        </div>
+        <div class="col-md-8">
+            <h3>Descripción </h3>
+            <mat-form-field appearance="outline" class="d-block">
+                <textarea
+                matInput #descripcionInput
+                maxlength="1000"
+                placeholder="Estas deliciosas galletas hechas a base de avena son..."
+                formControlName="descripcionP"
+                style="height: 100%;"
+                rows="9"
+                ></textarea>
+                <mat-hint align="end">{{descripcionInput.value?.length || 0}}/1000</mat-hint>
+                <mat-error *ngIf="form.controls['descripcionP'].errors?.['required']">
+                    Este campo es obligatorio
+                </mat-error>
+            </mat-form-field>
+            <div class="row">
+            <div class="col-md-7">
+                <h3>Compuesto </h3><h3 style="color: #CE796B;">*</h3>
+                <br>
+                <mat-form-field appearance="outline" class="d-block">
+                    <mat-select formControlName="compuesto" name="compuesto">
+                    <mat-option *ngFor="let compuesto of compuestos" [value]="compuesto">
+                        {{compuesto.nombreCompuesto}}
+                    </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="form.controls['compuesto'].errors?.['required']">
+                        Este campo es obligatorio
+                    </mat-error>   
+                </mat-form-field>
+            </div>
+            <div class="col-md-5" >
+                <div mat-dialog-actions style="margin-top: 4rem;" [align]="'end'">
+                    <button mat-button routerLink="/admin/productos">Cancelar</button>
+                    <button
+                    mat-raised-button
+                    color="primary"
+                    type="submit"
+                    class="ms-2"
+                    [disabled]="frmLibro.invalid">
+                    Guardar</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</form>

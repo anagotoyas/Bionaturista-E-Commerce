@@ -1,0 +1,36 @@
+
+mat-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: white;
+}
+
+ul li {
+    list-style-type: none;
+    
+}
+
+.admin {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Montserrat;
+}
+
+.admin-img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    
+}
+
+.admin-img-icon {
+    height: 18px;
+    font-size: 18px;
+    
+}
+
+.mat-menu-content  {
+
+    font-family: Montserrat;
+}

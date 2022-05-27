@@ -1,0 +1,42 @@
+.example-card {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.container[type="cont"]{
+  display: flex;
+  justify-content: center;
+}
+
+mat-icon{
+  margin-right: 10px;
+}
+
+:host ::ng-deep .mat-tab-label{
+  min-width: 50%!important;
+}
+mat-form-field{
+  width: 100%;
+}
+
+.btn-siguiente{
+  display: flex;
+  justify-content: right;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+}
+img{
+  width: 5%;
+  filter: invert(60%);
+}
+.img-white{
+  filter: invert(100%);
+}
+
+.inf-envio{
+  margin-top: 10px;
+}
+.btn-pagar{
+  width: 100%;
+}

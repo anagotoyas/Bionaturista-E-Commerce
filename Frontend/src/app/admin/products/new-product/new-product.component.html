@@ -1,0 +1,12 @@
+<div class="container-fluid page" style="margin-top: 0px;">
+    <div class="page__box" >
+        <h2 class="titulo">Agregar un <strong>Nuevo Producto</strong></h2>
+        <div class="aviso">
+            <p style="font-weight: 600; color: #CE796B; display: inline; margin-right: 10px;">*</p><p style="display: inline;">Campos obligatorios</p>
+        </div>
+    </div>
+  
+    <div class="page__content position-relative" style="padding: 0 4rem; ">
+        <app-form-product (onSubmit)="createProduct($event)"></app-form-product>
+    </div>
+</div>

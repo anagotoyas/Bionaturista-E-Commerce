@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+mat-form-field{
+    width: 100%;
+    background-color: white;
+}
+  
+ table{
+    width: 100%;
+    justify-content: flex-start;
+    height: auto;
+    font-family: Montserrat;
+    background-color: white;
+    margin-top: 20px
+
+}
+
+.table-row {
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+th {
+    font-size: 19px;
+    font-weight: 700;
+    justify-content: flex-start;
+    color: black;
+    
+}
+
+td {
+    color: black;
+    font-weight: 500;
+}
+
+mat-icon {
+  vertical-align: middle;
+  
+}
+
+button {
+  border-radius: 200px;
+  float:center;
+  line-height: 220%;
+  border: none;
+}
+  
+#verProducto {
+    background: #64813F;
+    color: white;
+    margin-right: 12px;
+    box-shadow: white;
+
+}
+
+#editarProducto {
+    background: #4A72B2;
+    color: white;
+    box-shadow: white;
+    margin-right: 12px;
+}
+
+#eliminarProducto {
+    background: #C32323;
+    color: white;
+    box-shadow: white;
+}
+
+.table-container {
+    height: auto;
+    width: inherit;
+    user-select: none;
+    background-color: white;
+}
+
+.page__content {
+  
+    background: white;
+    color: black;
+    padding: 30px;
+    font-family: Montserrat;
+  }
+
+  .container2{
+  
+    margin-top:30px;
+  
+    background-color: #F3F3F3;
+    border-radius: 25px;
+  
+  }
+
+  .page {
+    color: white;
+    padding: 0 2rem;
+    background: white;
+  }
+  
+  .page__box {
+    padding: 30px;
+    color: black;
+    display: flex;
+    font-family: Montserrat;
+  }
+  
+  .fill-space {
+    flex: 1 1 auto;
+  }
+
+  .botonAgregarP {
+    background: #667B8F;
+    color: white;
+    font-family: Montserrat;
+    font-weight: 600;
+    border-radius: 30px;
+  }
+
+
+  

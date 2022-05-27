@@ -1,0 +1,42 @@
+<head>
+    <meta charset="utf-8">
+    <title>Producto</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet">
+    
+  </head>
+  <body>
+      <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" >
+                <mat-icon class="nav-breadcrumb triangle">play_arrow</mat-icon><li class="breadcrumb-item" ><a class=bread href="../user">Productos</a></li>
+                
+            </ol>
+          </nav>
+
+          <div class="cuadro" *ngIf="dataSource">
+                <div class="row">
+                    <div class="col-6 vida" >
+                        <img src={{this.dataSource.imagenP}} alt="Imagen de Producto">
+                    </div>
+                    <div class="col-6 muerte" >
+                        <h3 id="title-producto">{{dataSource.nombreP}}</h3>
+                        <p class="cat"><b class="categoria">Categoria: </b>{{this.categoria}}</p>
+                        <p class="cat"><b class="categoria">Compuesto: </b>{{this.compuesto}}</p>
+                        <p class="precio" >S/ {{this.precio}}</p>
+                        <p class="desc"><b class="descri">Descripción: </b><br>{{dataSource.descripcionP}}</p>
+
+                        <button type="button" class="btn btn-anadir" (click)="agregarAlCarrito(dataSource.idProducto)"><span>Añadir&nbsp;</span> <mat-icon class="shopping_cart carro">shopping_cart</mat-icon></button><br>
+                        
+                        <a  class="back" href="../user/"> <i class="far fa-arrow-alt-circle-left "></i><span class="continua">Continua <b >Comprando</b></span> </a>
+            
+                    </div>
+                  
+
+                 </div>
+
+
+
+                </div>
+      </div>
+    
+  </body>

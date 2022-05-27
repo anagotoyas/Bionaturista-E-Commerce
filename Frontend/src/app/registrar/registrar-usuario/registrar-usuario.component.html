@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="registrar-usuario.component.css">
+</head>
+<section class="fila">
+    <div class="colu-1">
+        <div class="info-box">
+            <h1 style="font-weight: 500; text-align: center;">¿Qué <strong>beneficios</strong> obtengo al <strong>registrarme</strong>?</h1>
+            <img class="beneficios" src="../../assets/beneficios.png" alt="beneficios" style="margin-top: 10px">
+            <ul style="margin: auto;">
+                <li style="margin-bottom: 2px;">Hacer tus compras en <strong>solo un click.</strong></li>
+                <li style="margin-bottom: 2px;">Revisar tu <strong>historial de pedidos.</strong></li>
+                <li style="margin-bottom: 2px;">Guardar y actualizar tus <strong>datos o direcciones.</strong></li>
+                <li style="margin-bottom: 10px;">Acceder a <strong>beneficios exclusivos</strong> y <strong>ofertas de Bionaturista Productos Naturales</strong> diseñadas especialmente para ti.</li>
+            </ul>             
+            <img class="logo" src="../../assets/LogoHorizontal.png" alt="Bionaturista">
+        </div>
+    </div>
+    <div class="colu-2">
+        <app-form-registrar-usuario (onSubmit)="registerUser($event)"></app-form-registrar-usuario>
+    </div>
+</section>
+<p class="danger">{{msg}}</p>
+</html>

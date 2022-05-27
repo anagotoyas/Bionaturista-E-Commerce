@@ -1,0 +1,76 @@
+.logo {
+    text-align: center;
+    padding: 2.6rem 0.4rem;
+}
+
+.logo img {
+    width: 200px;
+    margin-bottom: 30px;
+}
+
+.mat-icon {
+    vertical-align: center;
+    margin-right: 1rem;
+}
+
+.mat-divider {
+    border-top-width: 1px;
+    border-color:rgb(215, 222, 228);
+}
+
+mat-nav-list a {
+    
+    color: white !important;
+    font-size: 1.3rem;
+    padding: 20px;
+    height: 100%;
+    transition: 0.3s;
+    font-family: Montserrat;
+    font-weight: 500;
+    padding-top: 30px; 
+}
+
+.botonAgregarC {
+    background: #667B8F;
+  color: white;
+  font-family: Montserrat;
+  font-weight: 600;
+  width: 100%;
+  height: 60px;
+  border-radius: 0;
+}
+
+.botonAgregarC:hover {
+    background-color: #495867;
+    transition: 0.5s;
+}
+
+mat-nav-list a:hover  {
+    background: #667B8F !important;
+    transition: 0.5s;
+    
+}
+
+.logo a:hover {
+    
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(73, 88, 103, 0.2);
+
+}
+
+body::-webkit-scrollbar-thumb {
+    background: rgba(73, 88, 103, 0.5);
+    
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: rgba(73, 88, 103, 0.7);
+    
+}
+
+body::-webkit-scrollbar-thumb:active {
+    background: rgba(73, 88, 103);
+    
+}

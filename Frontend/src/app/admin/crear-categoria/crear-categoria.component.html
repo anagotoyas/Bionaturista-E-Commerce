@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Nueva Categoria</h1>
+<div mat-dialog-content>
+  <form [formGroup]="categoriaForm" autocomplete="off">
+    <mat-form-field appearance="outline">
+      <mat-label>Nombre de la categoria</mat-label>
+      <input formControlName="nombreCategoria" matInput #nameInput placeholder="Inserte el nombre de la categoria" type="text" maxlength="100" />
+    </mat-form-field>
+    <div class="error-msg" *ngIf="categoriaForm.controls['nombreCategoria'].errors?.['minlength']">Debe tener más de 3 caracteres</div>
+    <div class="error-msg" *ngIf="categoriaForm.controls['nombreCategoria'].errors?.['maxlength']">El nombre del compuesto debe ser menos de 100 caracteres</div>
+  </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Cancelar</button>
+  <button mat-raised-button color="primary" type="submit" (click)="crearCategoria()" [disabled]="categoriaForm.invalid">Save</button>
+</div>

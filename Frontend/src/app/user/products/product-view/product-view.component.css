@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+.container{
+    margin-top:25px;
+}
+.triangle{
+    margin: 10px 5px 0 0 ;
+}
+.nav-breadcrumb{
+    color: #64813F;
+   font-size:25px;
+   margin-bottom:45px;
+   
+   
+}
+
+.breadcrumb-item a{ 
+    text-decoration: none;
+    color: #4A72B2;
+    font-weight: bold;
+    font-size:30px;
+    margin-top:25px;
+
+ }
+ .breadcrumb-item a:hover{
+    color:rgb(106, 106, 106);
+}
+
+
+
+
+
+ #title-producto{
+    color: #4A72B2;
+    font-weight: bold;
+    font-size: 35px;
+ }
+
+ .cat{
+    font-size:18px;
+ }
+
+ .categoria{
+    font-size:21px;
+ }
+ .desc{
+    font-size:18px;
+ }
+ .descri{
+    font-size:21px;
+ }
+
+
+.precio{
+    color: #64813F;
+    font-size:40px;
+    font-weight: bold;
+}
+.btn-anadir{
+    background-color: #64813F;
+    color: #fff;
+    font-weight: bold;
+    font-size:18px;
+  
+}
+.carro{
+    color: #fff;
+    padding-top:5px;
+   font-size:18px;
+   position: absolute;
+   
+}
+
+button{
+    margin:25px 0 25px 5px;
+    width: 50%;
+    float:center;
+    display: block;
+}
+
+button:hover{
+    background-color:rgb(106, 106, 106);
+    color:#fff
+}
+
+a{
+    text-decoration: none;
+}
+
+.back {
+    
+    color:black;
+    font-size:21px;
+    margin-bottom: 50px;
+}
+.back:hover{
+    color:rgb(106, 106, 106);
+    
+}
+
+
+
+.continua{
+    margin-left: 15px;
+   
+}
+
+img{
+    float: center;
+}

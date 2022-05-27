@@ -1,0 +1,40 @@
+<div class="logo py-4">
+    <a routerLink="/admin/productos"><img src="../../../assets/LogoAdmin.png" alt="BionaturistaLogo"></a>
+</div>
+<mat-nav-list>
+
+    <mat-divider></mat-divider>
+
+
+    <a mat-list-item routerLink="/admin/productos" class="itensito">
+        <mat-icon>redeem</mat-icon> Productos
+    </a>
+
+    <div class="sub-mat-list">
+        <button mat-flat-button style="font-size: 1.05rem; text-align: left" class="botonAgregarC" (click)="openModal()">ㅤ +ㅤAgregar Compuesto</button>
+        <button mat-flat-button style="font-size: 1.05rem; text-align: left" class="botonAgregarC" (click)="openCrearCategoria()">ㅤ +ㅤAgregar Categoría</button>
+    </div>
+
+    <a  mat-list-item routerLink="/admin/ventas">
+        <mat-icon>loyalty</mat-icon>
+        Ventas
+    </a>
+    <a mat-list-item >
+        <mat-icon>supervised_user_circle</mat-icon> Clientes
+    </a>
+    <a mat-list-item >
+        <mat-icon>filter_frames</mat-icon> Pedidos
+    </a>
+
+</mat-nav-list>
+
+<!--
+No funciona sorry
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.mat-list-item').click(function(){
+            $(this).next('.sub-mat-list').slideToggle();
+        })
+    });
+</script>
+-->
